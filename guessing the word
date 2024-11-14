@@ -1,0 +1,33 @@
+from random import *
+print("hallo")
+words=["hallo","hi","tiger","lion","then","apple," "banana," "cat," "dog," "elephant," "fish," "grape," "house," "island," "jacket," "kiwi," "lemon," "mountain," "notebook," "orange," "pencil," "quilt," "rose," "sun," "tree," "umbrella," "vase," "water," "xylophone," "yacht," "zebra," "airplane," "ball," "car," "dolphin," "ear," "flame," "goose," "hat," "ice," "juice," "kettle," "lamp," "moon," "nest," "owl," "paper," "quill," "rabbit," "star," "tiger," "unicorn," "violet," "whale," "x-ray," "yellow," "zoo."]
+word=choice(words)
+name=str(input("enter your name "))
+print("all the best ",name)
+chance=12
+
+
+print("Guess the characters ")
+
+guesses = ''
+while chance>0:
+    failure=0
+    for char in word:
+        if char in guesses:
+            print(char,end="")
+        else:
+            print("_")
+            failure+=1
+    if failure==0:
+        print(" \n you won the word is ",word)
+        break
+    guese=input(" guese the letter ")
+    guesses+=guese
+
+    if guese not in word:
+        chance-=1
+        print(" you lose")
+        print(" you have olny ",chance,"more chance")
+
+
+
